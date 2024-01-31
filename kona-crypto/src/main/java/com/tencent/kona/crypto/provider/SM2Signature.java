@@ -86,6 +86,7 @@ public final class SM2Signature extends SignatureSpi {
         }
 
         ECPrivateKey ecPrivateKey = (ECPrivateKey) privateKey;
+        System.out.println("SM2Signature With + ", ecPrivateKey.getAlgorithm());
 
         BigInteger s = ecPrivateKey.getS();
         if (s.compareTo(ZERO) <= 0 || s.compareTo(ORDER.subtract(ONE)) >= 0) {
